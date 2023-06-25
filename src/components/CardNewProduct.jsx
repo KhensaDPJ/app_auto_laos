@@ -4,7 +4,7 @@ import React from 'react';
 const CardNewProduct = ({id, image, title, price}) => {
   return (
     <TouchableOpacity className="pl-2">
-      <View className="w-28 mb-2 p-2 bg-white shadow-sm rounded-sm">
+      <View className="w-28 mb-2 p-2 bg-white shadow-lg rounded-lg">
         <Image
           source={{uri: image}}
           resizeMode="stretch"

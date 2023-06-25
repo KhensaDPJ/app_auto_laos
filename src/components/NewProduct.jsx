@@ -1,7 +1,7 @@
-import {View, Text, ScrollView, TouchableOpacity, FlatList} from 'react-native';
-import React, {useEffect, useState} from 'react';
+import { View, Text, ScrollView, TouchableOpacity, FlatList } from 'react-native';
+import React, { useEffect, useState } from 'react';
 import CardNewProduct from './CardNewProduct';
-import {PlusIcon} from 'react-native-heroicons/outline';
+import { PlusIcon } from 'react-native-heroicons/outline';
 
 const NewProduct = () => {
   const NewProductData = [
@@ -69,22 +69,22 @@ const NewProduct = () => {
       price: ' 1,360,000 원',
     },
   ];
-
   const [isRedMore, setIsRedMore] = useState(false);
 
   useEffect(() => {
-    setIsRedMore(true);
+    NewProductData.length > 3 ? setIsRedMore(true) : setIsRedMore(false)
   }, []);
 
   return (
-    <View className="p-5 h-full mb-12">
-      <Text className="text-lg">신상품</Text>
+    <View className={`${isRedMore ? 'p-3 h-80 pb-7' : 'p-3'}`}>
+      <Text className="text-lg mb-3">신상품</Text>
       <ScrollView
         scrollEnabled={isRedMore ? false : true}
-        className={`pt-4 ${isRedMore ? 'h-28' : 'h-80'}`}>
-        <View className="flex-row flex-wrap pt-4">
+        nestedScrollEnabled={false}
+        className={`pt-2 ${isRedMore ? 'h-80' : 'pt-2 max-h-[385px]'}`}>
+        <View className="flex-row flex-wrap justify-center">
           {NewProductData.map(item => (
-            <View>
+            <View className='flex'>
               <CardNewProduct
                 key={item.id}
                 id={item.id}
@@ -98,11 +98,10 @@ const NewProduct = () => {
       </ScrollView>
       <TouchableOpacity
         onPress={() => setIsRedMore(prev => !prev)}
-        className={`${
-          isRedMore
-            ? 'w-full border-2 border-gray-200 p-4 flex-row space-x-2 items-center justify-center my-2 mb-10'
-            : 'hidden'
-        }`}>
+        className={`${isRedMore
+          ? 'w-full border-2 border-gray-200  flex-row space-x-2 items-center justify-center p-2'
+          : 'hidden'
+          }`}>
         <Text>상품 더보기</Text>
         <PlusIcon size={25} color={'gray'} />
       </TouchableOpacity>
