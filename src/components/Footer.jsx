@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 import {ChevronUpIcon, ChevronDownIcon} from 'react-native-heroicons/outline';
 
 const Footer = () => {
-  const [upAndDownIconClick, setUpAndDownIconClick] = useState(false);
+  const [upAndDownIconClick, setUpAndDownIconClick] = useState(true);
   return (
     <>
       <View className="w-full bg-[#E1E8ED] p-3">
@@ -22,12 +22,12 @@ const Footer = () => {
       </View>
       <View className="w-full h-1 bg-[#A9B7C1]"></View>
       <View className="w-full bg-[#E1E8ED] p-3">
-        <Text className="text-base">
+        <Text className="text-base pt-4">
           개인정보처리방침 | 이용약관 | 위치기반서비스 이용약관
         </Text>
-        <View className=" pt-2 justify-center items-center">        
+        <View className=" pt-4 justify-center items-center">        
           {upAndDownIconClick ? (
-            <TouchableOpacity onPress={() => setUpAndDownIconClick(false)} className='flex-row'>
+            <TouchableOpacity onPress={() => setUpAndDownIconClick(false)} className='flex-row pb-4'>
                 <Text className="text-base">오토앤 주식회사 사업자 정보 </Text>
               <ChevronUpIcon size={25} color={'gray'} />
             </TouchableOpacity>

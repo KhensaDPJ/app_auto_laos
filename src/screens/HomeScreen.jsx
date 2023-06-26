@@ -6,6 +6,8 @@ import { MagnifyingGlassIcon,ListBulletIcon } from 'react-native-heroicons/outli
 import TodayOffer from '../components/TodayOffer';
 import RecommendedProduct from '../components/RecommendedProduct';
 import Footer from '../components/Footer';
+import GoToTopButton from '../components/GoToTopButton';
+import QuickButton from '../components/QuickButton';
 
 const HomeScreen = () => {
   return (
@@ -49,7 +51,11 @@ const HomeScreen = () => {
 
         {/* footer */}
         <Footer/>
+
       </ScrollView>
+      <QuickButton/>
+              {/* Go to top button */}
+      <GoToTopButton/>
     </SafeAreaView>
   </>
   )
