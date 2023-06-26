@@ -3,6 +3,9 @@ import React, { useState } from 'react'
 import NewProduct from '../components/NewProduct'
 import Baner from '../components/Baner'
 import { MagnifyingGlassIcon,ListBulletIcon } from 'react-native-heroicons/outline';
+import TodayOffer from '../components/TodayOffer';
+import RecommendedProduct from '../components/RecommendedProduct';
+import Footer from '../components/Footer';
 
 const HomeScreen = () => {
   return (
@@ -37,6 +40,15 @@ const HomeScreen = () => {
 
         {/* banner */}
         <Baner />
+        
+        {/* TodayOffer */}
+        <TodayOffer/>
+
+        {/* RecommendedProduct */}
+        <RecommendedProduct/>
+
+        {/* footer */}
+        <Footer/>
       </ScrollView>
     </SafeAreaView>
   </>
