@@ -1,19 +1,28 @@
-import { View, TouchableOpacity,SafeAreaView,ScrollView,Image,RefreshControl } from 'react-native'
-import React, { useState } from 'react'
-import NewProduct from '../components/NewProduct'
-import Baner from '../components/Baner'
-import { MagnifyingGlassIcon,ListBulletIcon } from 'react-native-heroicons/outline';
+import {
+  View,
+  TouchableOpacity,
+  SafeAreaView,
+  ScrollView,
+  Image,
+  Text,
+} from 'react-native';
+import React, {useRef} from 'react';
+import NewProduct from '../components/NewProduct';
+import Baner from '../components/Baner';
+import {
+  MagnifyingGlassIcon,
+  ListBulletIcon,
+  ChevronUpIcon,
+} from 'react-native-heroicons/outline';
 import TodayOffer from '../components/TodayOffer';
 import RecommendedProduct from '../components/RecommendedProduct';
 import Footer from '../components/Footer';
-import GoToTopButton from '../components/GoToTopButton';
 import QuickButton from '../components/QuickButton';
 
 const HomeScreen = () => {
   return (
     <>
-    <SafeAreaView className="bg-white flex-1">
-      
+      <SafeAreaView className="bg-white flex-1">
         {/* Header */}
         <View className="bg-white flex-row p-4 items-center justify-between border-b-2 border-gray-200">
           <TouchableOpacity>
@@ -34,31 +43,38 @@ const HomeScreen = () => {
             <MagnifyingGlassIcon size={32} color={'gray'} />
           </TouchableOpacity>
         </View>
-        <ScrollView>
-        {/* Body */}
 
-        {/* new product */}
-        <NewProduct />
+        <ScrollView ref={(ref)=>{
+          ScrollViewRef=ref;
+        }}>
+          {/* Body */}
 
-        {/* banner */}
-        <Baner />
-        
-        {/* TodayOffer */}
-        <TodayOffer/>
+          {/* new product */}
+          <NewProduct />
 
-        {/* RecommendedProduct */}
-        <RecommendedProduct/>
+          {/* banner */}
+          <Baner />
 
-        {/* footer */}
-        <Footer/>
+          {/* TodayOffer */}
+          <TodayOffer />
 
-      </ScrollView>
-      <QuickButton/>
-              {/* Go to top button */}
-      <GoToTopButton/>
-    </SafeAreaView>
-  </>
-  )
-}
+          {/* RecommendedProduct */}
+          <RecommendedProduct />
 
-export default HomeScreen
+          {/* footer */}
+          <Footer />
+        </ScrollView>
+        {/* Go to top button */}
+        <TouchableOpacity className="items-end mr-4">
+          <View className="h-12 w-12 bg-[#394956] bottom-10 absolute items-center shadow-lg rounded-3xl flex-1 justify-items-center">
+            <ChevronUpIcon size={25} color={'white'} />
+            <Text className="text-white">TOP</Text>
+          </View>
+        </TouchableOpacity>
+      </SafeAreaView>
+      <QuickButton />
+    </>
+  );
+};
+
+export default HomeScreen;

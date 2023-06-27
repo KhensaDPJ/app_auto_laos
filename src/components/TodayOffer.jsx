@@ -105,8 +105,8 @@ const TodayOffer = () => {
             key={data.id}
             className={`${
               currentIndex == index
-                ? 'h-3 w-10 rounded-full bg-[#007C8A]'
-                : 'h-3 w-3 rounded-full bg-[#E1E8ED]'
+                ? 'h-2 w-8 rounded-full bg-[#007C8A]'
+                : 'h-2 w-2 rounded-full bg-[#E1E8ED]'
             }`}></View>
         ))}
       </View>:''}
