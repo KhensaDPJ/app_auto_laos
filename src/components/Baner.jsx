@@ -11,11 +11,11 @@ const Baner = () => {
     },
     {
       id: 2,
-      image: 'https://cdn.auton.kr/auton/o2o/banner/Widget_1687747187854.png',
+      image: 'https://cdn.auton.kr/auton/o2o/banner/Widget_1687916392172.png',
     },
     {
       id: 3,
-      image: 'https://cdn.auton.kr/auton/o2o/banner/Widget_1687747187854.png',
+      image: 'https://cdn.auton.kr/auton/o2o/banner/Widget_1687916406833.png',
     },
   ];
   const [currentIndex, setCurrenIndex] = useState(0);

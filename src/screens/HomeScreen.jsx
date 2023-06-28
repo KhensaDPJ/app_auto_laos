@@ -6,7 +6,7 @@ import {
   Image,
   Text,
 } from 'react-native';
-import React, {useRef} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import NewProduct from '../components/NewProduct';
 import Baner from '../components/Baner';
 import {
@@ -20,6 +20,16 @@ import Footer from '../components/Footer';
 import QuickButton from '../components/QuickButton';
 
 const HomeScreen = () => {
+const ref=useRef<ScrollView>(null);
+
+const scrollRef = useRef();
+
+const onPressTouch = () => {
+  scrollRef.current?.scrollTo({
+    y: 0,
+    animated: true,
+  });
+}
   return (
     <>
       <SafeAreaView className="bg-white flex-1">
@@ -44,9 +54,8 @@ const HomeScreen = () => {
           </TouchableOpacity>
         </View>
 
-        <ScrollView ref={(ref)=>{
-          ScrollViewRef=ref;
-        }}>
+        <ScrollView
+          ref={scrollRef}>
           {/* Body */}
 
           {/* new product */}
@@ -65,7 +74,7 @@ const HomeScreen = () => {
           <Footer />
         </ScrollView>
         {/* Go to top button */}
-        <TouchableOpacity className="items-end mr-4">
+        <TouchableOpacity className="items-end mr-4" onPress={onPressTouch}>
           <View className="h-12 w-12 bg-[#394956] bottom-10 absolute items-center shadow-lg rounded-3xl flex-1 justify-items-center">
             <ChevronUpIcon size={25} color={'white'} />
             <Text className="text-white">TOP</Text>

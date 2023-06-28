@@ -15,7 +15,7 @@ const NewProduct = () => {
     {
       id: 2,
       image:
-        'https://cdn.auton.kr/auton/o2o/productImage/productImage_1685056752292.png',
+        'https://cdn.auton.kr/auton/o2o/productImage/productImage_1687785193552.jpg',
       title: '[9월출발]라오스 명품3색 골프투어 5일#부영/레이크/롱비엔C.C',
       price: ' 1,360,000 원',
     },
